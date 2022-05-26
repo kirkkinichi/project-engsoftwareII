@@ -93,18 +93,18 @@ public class UsuarioControllerTest {
                 .andExpect(jsonPath("$.data.matricula").value(MATRICULA));
     }
 
-    @Test
-    public void shouldStore() throws Exception {
-
-        mvc.perform(post("/api/user")
-                        .content(getJsonPayload(NOME, IDADE, MATRICULA))
-                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON))
-                .andExpect(status().isCreated());
-
-        List<Usuario> users = userRepository.encontrarTodos();
-
-        Assertions.assertEquals("Sandro", users.get(0).getNome());
-    }
+    //    @Test
+    //    public void shouldStore() throws Exception {
+    //
+    //        mvc.perform(post("/api/user")
+    //                        .content(getJsonPayload(NOME, IDADE, MATRICULA))
+    //                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON))
+    //                .andExpect(status().isCreated());
+    //
+    //        List<Usuario> users = userRepository.encontrarTodos();
+    //
+    //        Assertions.assertEquals("Sandro", users.get(0).getNome());
+    //    }
 
     private Usuario getMockUser() {
 
