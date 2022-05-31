@@ -60,7 +60,7 @@ public class UserController {
 
         Optional<Usuario> usuario = userService.getById(id);
 
-        if(usuario.isEmpty()){
+        if(!usuario.isPresent()){
             response.getErrors().add("ID de usuário inexistente.");
             return ResponseEntity.notFound().build();
         }
